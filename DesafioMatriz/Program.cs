@@ -22,9 +22,22 @@ namespace DesafioMatriz
 
             int numero = "Qual numero voce quer saber informações ?".ReturnInt();
 
-            AcharNumero(numero);
+            AcharNumero(numero, linha, coluna, matriz);
 
             Console.ReadLine();
+        }
+
+        private static void AcharNumero(int numero, int linha, int coluna, int[,] matriz)
+        {
+
+            for (int i = 0; i < linha; i++)
+            {
+                for (int j = 0; j < coluna; j++)
+                {
+                    Console.WriteLine(matriz[i,j]);
+                }
+            }
+
         }
 
         private static void PreencherMatriz(int linha, int coluna, int[,] matriz)
