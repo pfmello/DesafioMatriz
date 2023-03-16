@@ -66,9 +66,23 @@ namespace DesafioMatriz
 
         private static void PreencherMatriz(int linha, int coluna, int[,] matriz)
         {
+            int numerosNecessarios = QuantosNumeros(matriz);
+            string[] vetor = new string[numerosNecessarios];
+            
 
-            string numeros = "10 8 15 12 21 11 23 8 14 5 13 19 8";
-            string[] vetor = numeros.Split(' ');
+            bool numerosSuficientes = false;
+            do
+            {
+                Console.WriteLine($"A matriz precisa de {numerosNecessarios} numeros ! Coloque separados por espaço !");
+                string numeros = Console.ReadLine();
+                vetor = numeros.Split(' ');
+                Console.WriteLine($"Voce inseriu {vetor.Length} numeros !");
+                if (vetor.Length == numerosNecessarios)
+                {
+                    numerosSuficientes = true;
+                }
+            } while (!numerosSuficientes);
+
             int indexVetor = 0;
 
             for (int i = 0; i < linha; i++)
@@ -79,6 +93,18 @@ namespace DesafioMatriz
                     indexVetor++;
                 }
             }
+        }
+
+        private static int QuantosNumeros(int[,] matriz)
+        {
+            int numeros = 0;
+
+            foreach (int numero in matriz)
+            {
+                numeros++;
+            }
+
+            return numeros;
         }
 
         private static void PercorrerMatriz(int[,] matriz, int N)
