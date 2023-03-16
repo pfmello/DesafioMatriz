@@ -34,7 +34,31 @@ namespace DesafioMatriz
             {
                 for (int j = 0; j < coluna; j++)
                 {
-                    Console.WriteLine(matriz[i,j]);
+                    if (numero == matriz[i,j])
+                    {
+                        Console.WriteLine($"Achei o {numero} na linha {i}, coluna {j}, posição {i},{j}!");
+
+                        if (j > 0)
+                        {
+                            Console.WriteLine($"Esquerda: {matriz[i, j - 1]}");
+                        }
+                        if (j < linha - 1)
+                        {
+                            Console.WriteLine($"Direita: {matriz[i, j + 1]}");
+                        }
+
+                        if (i > 0)
+                        {
+                            Console.WriteLine($"Acima: {matriz[i - 1,j]}");
+                        }
+
+                        if (i < coluna -1)
+                        {
+                            Console.WriteLine($"Abaixo: {matriz[i + 1, j]}");
+                        }
+
+                        //Console.WriteLine($"Abaixo: {matriz[i +1,j]}");
+                    }
                 }
             }
 
