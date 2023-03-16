@@ -80,6 +80,19 @@ namespace DesafioMatriz
                 if (vetor.Length == numerosNecessarios)
                 {
                     numerosSuficientes = true;
+
+                    foreach (var valor in vetor)
+                    {
+                        bool numeroValido = false;
+                        numeroValido = int.TryParse(valor, out int numero);
+
+                        if(!numeroValido)
+                        {
+                            Console.WriteLine("VOCE INSERIU VALORES INVALIDOS !");
+                            numerosSuficientes = false;
+                        }
+                    }
+
                 }
             } while (!numerosSuficientes);
 
