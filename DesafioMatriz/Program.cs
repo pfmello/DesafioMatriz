@@ -14,6 +14,7 @@ namespace DesafioMatriz
 
             int linha = "Insira o número de LINHAS da matriz:".ReturnInt();
             int coluna = "Insira o número de COLUNAS da matriz:".ReturnInt();
+
             int[,] matriz = new int[linha, coluna];
 
             PreencherMatriz(linha, coluna, matriz);
@@ -56,8 +57,6 @@ namespace DesafioMatriz
                         {
                             Console.WriteLine($"Abaixo: {matriz[i + 1, j]}");
                         }
-
-                        //Console.WriteLine($"Abaixo: {matriz[i +1,j]}");
                     }
                 }
             }
@@ -77,6 +76,7 @@ namespace DesafioMatriz
                 string numeros = Console.ReadLine();
                 vetor = numeros.Split(' ');
                 Console.WriteLine($"Voce inseriu {vetor.Length} numeros !");
+
                 if (vetor.Length == numerosNecessarios)
                 {
                     numerosSuficientes = true;
@@ -84,11 +84,11 @@ namespace DesafioMatriz
                     foreach (var valor in vetor)
                     {
                         bool numeroValido = false;
-                        numeroValido = int.TryParse(valor, out int numero);
+                        numeroValido = int.TryParse(valor, out int numeroTeste);
 
                         if(!numeroValido)
                         {
-                            Console.WriteLine("VOCE INSERIU VALORES INVALIDOS !");
+                            Console.WriteLine("Você inseriu valores inválidos ! Para de graça !");
                             numerosSuficientes = false;
                         }
                     }
